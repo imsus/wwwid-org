@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ block "title" . }}
+    <!-- Blocks may include default content. -->
+    {{ .Site.Title }}
+    {{ end }}</title>
+</head>
+
+<body>
+  <!-- Code that all your templates share, like a header -->
+  {{ block "main" . }}
+  <!-- The part of the page that begins to differ between templates -->
+  {{ end }}
+  {{ block "footer" . }}
+  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+  {{ end }}
+
+  {{ if eq (getenv "HUGO_ENV") "production" }}
+  <script type="module">
+    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
+
+    if ('serviceWorker' in navigator) {
+      const wb = new Workbox('/sw.js');
+
+      wb.register();
+    }
+  </script>
+  {{ end }}
+
+  <script src="//instant.page/3.0.0" type="module" defer
+    integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+</body>
+
+</html>
