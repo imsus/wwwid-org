@@ -1,0 +1,6 @@
+baseURL: 'https://wwwid.org'
+languageCode: id
+title: 'Modern Web Community Indonesia'
+
+taxonomies:
+  tag: tags
