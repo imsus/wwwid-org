@@ -1,3 +1,3 @@
 import '../css/style.css'
 
-console.log('ready perfectly')
+console.log('Ready Perfectly')
