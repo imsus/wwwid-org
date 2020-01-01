@@ -4,6 +4,7 @@ devDependencies:
   '@rollup/plugin-commonjs': 11.0.0_rollup@1.27.14
   '@rollup/plugin-node-resolve': 6.0.0_rollup@1.27.14
   autoprefixer: 9.7.3
+  cssnano: 4.1.10
   postcss: 7.0.26
   postcss-import: 12.0.1
   postcss-nested: 4.2.1
@@ -2513,6 +2514,7 @@ specifiers:
   '@rollup/plugin-commonjs': ^11.0.0
   '@rollup/plugin-node-resolve': ^6.0.0
   autoprefixer: ^9.7.3
+  cssnano: ^4.1.10
   postcss: ^7.0.26
   postcss-import: ^12.0.1
   postcss-nested: ^4.2.1
