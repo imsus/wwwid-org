@@ -1,1 +1,1 @@
-{"version":3,"file":"main.js","sources":["../../src/js/main.js"],"sourcesContent":["import '../css/style.css'\n\nconsole.log('Ready Perfectly')\n"],"names":[],"mappings":";;;CAEA,OAAO,CAAC,GAAG,CAAC,iBAAiB,CAAC;;;;"}
+{"version":3,"file":"main.js","sources":["../../src/js/main.js"],"sourcesContent":["import '../css/style.css'\n\nconsole.log('Ready Perfectly')\n"],"names":["console","log"],"mappings":"yBAEAA,QAAQC,IAAI"}

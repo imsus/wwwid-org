@@ -1,37 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html amp lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>{{ block "title" . }}
-    <!-- Blocks may include default content. -->
-    {{ .Site.Title }}
-    {{ end }}</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>Hello, AMPs</title>
+  <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Open-source framework for publishing content",
+      "datePublished": "2015-10-07T12:02:41Z",
+      "image": [
+        "logo.jpg"
+      ]
+    }
+  </script>
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
+    </style>
+  </noscript>
 </head>
 
 <body>
-  <!-- Code that all your templates share, like a header -->
-  {{ block "main" . }}
-  <!-- The part of the page that begins to differ between templates -->
+  {{ block "content" . }}
   {{ end }}
-  {{ block "footer" . }}
-  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
-  {{ end }}
-
-  {{ if eq (getenv "HUGO_ENV") "production" }}
-  <script type="module">
-    import { Workbox } from 'https://storage.googleapis.com/workbox-cdn/releases/4.0.0/workbox-window.prod.mjs';
-
-    if ('serviceWorker' in navigator) {
-      const wb = new Workbox('/sw.js');
-
-      wb.register();
-    }
-  </script>
-  {{ end }}
-
-  <script src="//instant.page/3.0.0" type="module" defer
-    integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
 </body>
 
 </html>

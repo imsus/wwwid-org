@@ -4,14 +4,19 @@
   "description": "Tema Hugo untuk wwwid.org",
   "main": "src/js/main.js",
   "scripts": {
-    "build": "npx npm-run-all build:asset build:service-worker build:hugo",
+    "dev": "npm run watch",
+    "gen": "npm run build",
+    "prod": "npm run build:production",
+    "build": "npx npm-run-all build:asset build:hugo-debug",
+    "build:production": "npx npm-run-all set-env:production build:asset build:hugo-production build:service-worker",
+    "watch": "npx npm-run-all --parallel watch:asset watch:hugo",
     "build:asset": "npx rollup -c",
-    "build:hugo": "hugo --gc --minify --cleanDestinationDir",
+    "build:hugo-production": "hugo --gc --minify --cleanDestinationDir",
     "build:hugo-debug": "hugo --debug --verbose --templateMetrics --templateMetricsHints",
     "build:service-worker": "npx workbox generateSW workbox-config.js",
-    "watch": "npx npm-run-all --parallel watch:asset watch:hugo",
     "watch:asset": "npx rollup -c -w",
     "watch:hugo": "hugo serve",
+    "set-env:production": "npx cross-env HUGO_ENV=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

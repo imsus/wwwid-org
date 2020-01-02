@@ -1,7 +1,2 @@
-(function () {
-	'use strict';
-
-	console.log('Ready Perfectly');
-
-}());
+!function(){"use strict";console.log("Ready Perfectly")}();
 //# sourceMappingURL=main.js.map
