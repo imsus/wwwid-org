@@ -2,9 +2,39 @@
 
 This theme is optimized for PWAMP approach.
 
-## Getting Started
+## Persyaratan
+1. Struktur folder `content`
+```
+.
+├── _index.md
+├── offline.md
+├── pages
+└── posts
+```
+2. Isi file `_index.md`
+```
+---
+title: 'Homepage'
+outputs:
+- html
+- css
+---
+```
 
-1. Go to your `theme` folder
-2. Run `git submodule add https://github.com/imsus/wwwid-org`
-3. Update your configuration to use this theme
-4. Run `hugo`
+Harus ada `outputs` yang berisi `html` dan `css`. Ini digunakan untuk menggenerate inline css untuk tag `<style amp-custom>`
+
+3. Isi file `offline.md`
+```
+---
+title: "You are offline"
+url: "offline.html"
+type: "offline"
+---
+```
+
+## Mulai
+
+1. Pindah ke folder `theme`
+2. Jalankan `git submodule add https://github.com/imsus/wwwid-org`
+3. Update file konfigurasi `config.{toml/yaml/json}` dengan menambahkan `theme: www-id`
+4. Jalankan `hugo`
