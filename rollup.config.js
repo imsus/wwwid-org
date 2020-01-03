@@ -15,7 +15,7 @@ export default {
   },
   plugins: [
     postcss({
-      extract: 'static/css/main.css'
+      extract: 'layouts/partials/css/main.css'
     }),
     resolve({ browser: true }),
     commonjs(),
